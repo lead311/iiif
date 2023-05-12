@@ -93,7 +93,7 @@ def identifiers(config):
     else:
         for image_file in os.listdir(config.image_dir):
             (iid, ext) = os.path.splitext(image_file)
-            if (ext in ['.jpg', '.png', '.tif'] and
+            if (ext in ['.jpg','.jpeg','.jp2','.tiff', '.png', '.tif'] and
                     os.path.isfile(os.path.join(config.image_dir, image_file))):
                 ids.append(iid)
     return ids
@@ -261,7 +261,7 @@ class IIIFHandler(object):
                 if (os.path.isfile(file)):
                     return file
         else:
-            for ext in ['.jpg', '.png', '.tif']:
+            for ext in ['.jpg','.jpeg','.jp2','.tiff', '.png', '.tif'] :
                 file = os.path.join(self.config.image_dir,
                                     self.identifier + ext)
                 if (os.path.isfile(file)):
