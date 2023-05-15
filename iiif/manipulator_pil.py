@@ -188,7 +188,7 @@ class IIIFManipulatorPIL(IIIFManipulator):
         else:
             # Save to specified location
             print(format)
-            if format == 'JPEG':
+            if format == 'jpeg' or format == 'jpg' :
                 print('im here')
                 self.image = self.image.convert('RGB')
             self.image.save(self.outfile, format=format)
