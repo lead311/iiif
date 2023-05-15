@@ -156,6 +156,7 @@ class IIIFManipulatorPIL(IIIFManipulator):
             self.output_format = fmt
             format = 'png'
         elif (fmt == 'jpg'):
+            self.image = self.image.convert('RGB')
             self.logger.debug("format: jpg")
             self.mime_type = "image/jpeg"
             self.output_format = fmt
@@ -165,6 +166,16 @@ class IIIFManipulatorPIL(IIIFManipulator):
             self.mime_type = "image/webp"
             self.output_format = fmt
             format = 'webp'
+        elif (fmt == 'tif'):
+            self.logger.debug("format: tif")
+            self.mime_type = "image/tif"
+            self.output_format = fmt
+            format = 'tiff'
+        elif (fmt == 'jp2'):
+            self.logger.debug("format: jp2")
+            self.mime_type = "image/jp2"
+            self.output_format = fmt
+            format = 'JPEG2000''
         else:
             raise IIIFError(code=415, parameter='format',
                             text="Unsupported output file format (%s), only png,jpg,webp are supported." % (fmt))
