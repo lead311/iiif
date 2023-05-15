@@ -175,7 +175,7 @@ class IIIFManipulatorPIL(IIIFManipulator):
             self.logger.debug("format: jp2")
             self.mime_type = "image/jp2"
             self.output_format = fmt
-            format = 'JPEG2000''
+            format = 'JPEG2000'
         else:
             raise IIIFError(code=415, parameter='format',
                             text="Unsupported output file format (%s), only png,jpg,webp are supported." % (fmt))
